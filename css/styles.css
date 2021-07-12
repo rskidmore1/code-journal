@@ -1,0 +1,50 @@
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.form-div {
+  width: 17rem;
+  background-color: lightgray;
+  padding: 1rem;
+}
+
+.form-label {
+  text-align: right;
+  font-family: sans-serif;
+}
+
+.form-button {
+  justify-content: right;
+  background-color: purple;
+  color: white;
+  border: 0;
+}
+
+form {
+  width: 100%;
+}
+
+.placeholder-img {
+  width: 100%;
+}
+
+.form-h2 {
+  text-align: left;
+  margin-left: 1rem;
+  font-family: sans-serif;
+}
+
+.head-box {
+  background-color: purple;
+}
+
+.head-box-text {
+  text-align: left;
+}
