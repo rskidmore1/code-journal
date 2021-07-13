@@ -10,14 +10,6 @@
   font-weight: bold;
 }
 
-.form-button {
-  text-align: right;
-  background-color: purple;
-  color: white;
-  border: 0;
-  width: 20px;
-}
-
 form {
   width: 100%;
 }
@@ -25,15 +17,6 @@ form {
 input {
   width: 100%;
   height: 2rem;
-}
-
-.form-row {
-  display: flex;
-  flex-flow: wrap;
-}
-
-.inner-row {
-  width: calc(100% / 2);
 }
 
 .placeholder-img {
