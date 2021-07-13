@@ -16,36 +16,66 @@
 </head>
 <body>
   <header>
+
+    <div class="header-div">
+      <div class="head-box-text">Code Journal </div>
+    </div>
   </header>
+
+
+
+
+
   <div class="container">
-    <div class="row">
+
 
       <div class="form-div" data-view="entry-form">
-        <div class="head-box">
-          <p class="head-box-text">Code Journal</p>
-        </div>
-        <h2 class="form-h2">New Entry</h2>
-        <img src="images/placeholder-image-square.jpg" alt="placeholder" class="placeholder-img">
-        <form>
-          <div>
-            <label for="title" class="form-label">Title</label><br>
-            <input type="type" name="title" id="title" required>
+
+        <h2 class="form-h2 margin-left-form">New Entry</h2>
+
+        <form id="codeform">
+          <div class="row">
+
+            <div class=" column-half">
+              <img src="images/placeholder-image-square.jpg" alt="placeholder" class="placeholder-img rounded">
+            </div>
+
+              <div class="column-half">
+                <div >
+
+                  <div class="form-item-div input-bottom-margin">
+                    <label for="title" class="form-label">Title</label><br>
+                    <input type="type" name="title" id="title" class="rounded" required>
+                  </div>
+
+                  <div class="form-item-div">
+                    <label for="photo-url" class="form-label">Photo URL</label><br>
+                    <input type="type" name="photo-url" id="photo-url" class="rounded" required>
+                  </div>
+
+                </div>
+             </div>
+
+            </div>
+
+
+          <div class="form-item-div">
+            <label for="notes" class="form-label margin-left-form">Notes</label><br>
+            <!-- <input type="textarea" name="notes" id="notes" required> -->
+            <textarea class="column-full margin-left-form"  id="notes" name="notes" rows="5" cols="33" required></textarea>
+
           </div>
+
           <div>
-            <label for="photo-url" class="form-label">Photo URL</label><br>
-            <input type="type" name="photo-url" id="photo-url" required>
+            <!-- <input class="form-button" type="submit" value="SAVE" > -->
+            <button type="submit" form="codeform" class="rounded" value="SAVE">SAVE</button>
           </div>
-          <div>
-            <label for="notes" class="form-label">Notes</label><br>
-            <input type="textbox" name="notes" id="notes" required>
-          </div>
-          <div>
-            <input class="form-button" type="submit" value="SAVE" >
-          </div>
+
         </form>
       </div>
 
-    </div>
+
+
   </div>
 
 
