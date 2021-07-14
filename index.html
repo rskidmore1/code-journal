@@ -15,10 +15,56 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-  </header>
-  <main>
-  </main>
+    <header>
+      <div class="container">
+        <div class="row header-div">
+          <div class="column-half">
+            <h3 class="head-box-text">Code Journal</h3>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <main>
+        <div class="form-div" data-view="entry-form">
+          <div class="row">
+            <div class="column-full">
+              <h1 class="form-h1">New Entry</h1>
+            </div>
+          </div>
+          <form id="codeform">
+            <div class="row">
+                <div class="column-half">
+                  <img src="images/placeholder-image-square.jpg" alt="placeholder" class="placeholder-img rounded form-item-div">
+                </div>
+                <div class="column-half">
+                  <div class="form-item-div input-bottom-margin">
+                    <label for="title" class="form-label">Title</label><br>
+                    <input type="type" name="title" id="title" class="rounded" required>
+                  </div>
+                  <div class="form-item-div">
+                    <label for="photo-url" class="form-label">Photo URL</label><br>
+                    <input type="type" name="photo-url" id="photo-url" class="photoUrl rounded" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-item-div">
+                <div class="row">
+                  <div class="column-full">
+                    <label for="notes" class="form-label ">Notes</label><br>
+                    <textarea class="column-full"  id="notes" name="notes" rows="5" cols="33" required></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="column-full">
+                  <button type="submit" form="codeform" class="rounded" >SAVE</button>
+                </div>
+              </div>
+          </form>
+        </div>
+      </main>
+  </div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
