@@ -1,7 +1,15 @@
+body {
+  background-color: rgb(221, 221, 221);
+}
+
+.head-box-text {
+  margin: 0 auto;
+  color: white;
+}
 
 .form-div {
   width: auto;
-  padding: 1rem;
+  padding-top: 1rem;
 }
 
 .form-label {
@@ -23,7 +31,7 @@ input {
   width: 100%;
 }
 
-.form-h2 {
+.form-h1 {
   text-align: left;
   font-family: sans-serif;
 }
@@ -31,7 +39,12 @@ input {
 header {
   background-color: purple;
   margin: 0;
-  height: 2rem;
+  padding: 0;
+  height: 3rem;
+}
+
+.header-div {
+  margin-top: -35px;
 }
 
 textarea {
@@ -49,4 +62,8 @@ button {
 .rounded {
   border-radius: 5px;
   border: 0;
+}
+
+.form-item-div {
+  margin-bottom: 1.5rem;
 }

@@ -8,10 +8,6 @@
   padding: 0 1.5rem;
 }
 
-body {
-  background-color: lightgray;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -22,29 +18,8 @@ body {
   width: 100%;
 }
 
-.header-div {
-  max-width: 575px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.head-box-text {
-  margin: 0 auto;
-  padding-top: 0.4rem;
-  padding-left: 1rem;
-  color: white;
-}
-
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 900px;
-  }
-
-  body {
-    margin: 0;
-  }
-
-  .header-div {
     max-width: 900px;
   }
 
@@ -55,19 +30,5 @@ body {
 
   .column-half {
     width: 50%;
-  }
-
-  .input-bottom-margin {
-    margin-bottom: 2rem;
-  }
-
-  .margin-left-form {
-    margin-left: 0.7rem;
-  }
-
-  .head-box-text {
-    margin: 0 auto;
-    padding-top: 0.4rem;
-    padding-left: 1.5rem;
   }
 }
