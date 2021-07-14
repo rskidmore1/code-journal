@@ -18,15 +18,17 @@
     <header>
       <div class="container">
         <div class="row header-div">
-          <div class="column-half">
+          <div class="column-half header">
             <h3 class="head-box-text">Code Journal</h3>
+
           </div>
+
         </div>
       </div>
     </header>
     <div class="container">
       <main>
-        <div class="form-div" data-view="entry-form">
+        <!-- <div class="form-div" data-view="entry-form">
           <div class="row">
             <div class="column-full">
               <h1 class="form-h1">New Entry</h1>
@@ -58,15 +60,63 @@
               </div>
               <div class="row">
                 <div class="column-full">
-                  <button type="submit" form="codeform" class="rounded" >SAVE</button>
+                  <button type="submit" form="codeform" class="form-button rounded" >SAVE</button>
                 </div>
               </div>
           </form>
-        </div>
+        </div> -->
 
         <div class="entries-div" data-view="entries">
+          <div class="row entries-title-row">
+            <div class="column-half entries-title">
+              <h1 class="form-h1">Entries</h1>
+            </div>
+            <div class="column-half entries-title">
+              <button class="new-button rounded">New</button>
+            </div>
+          </div>
+          <ul>
+            <li>
 
+              <div class="row">
+                <div class="column-half">
+                  <img src="images/placeholder-image-square.jpg" alt="placeholder" class="placeholder-img rounded form-item-div">
+                </div>
+                <div class="column-half">
+                  <div class="form-item-div input-bottom-margin">
+                    <h2>Lorem, ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Natus, laboriosam.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Natus, laboriosam.</p>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+
+            <li>
+
+              <div class="row">
+                <div class="column-half">
+                  <img src="images/placeholder-image-square.jpg" alt="placeholder" class="placeholder-img rounded form-item-div">
+                </div>
+                <div class="column-half">
+                  <div class="form-item-div input-bottom-margin">
+                    <h2>Lorem, ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Natus, laboriosam.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Natus, laboriosam.</p>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+          </ul>
         </div>
+
+
       </main>
   </div>
   <script src="js/data.js"></script>

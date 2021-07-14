@@ -1,5 +1,6 @@
 body {
   background-color: rgb(221, 221, 221);
+  font-family: sans-serif;
 }
 
 .head-box-text {
@@ -49,12 +50,23 @@ textarea {
   width: 100%;
 }
 
-button {
+.form-button {
   float: right;
   padding: 0.2rem 0.5rem;
   background-color: purple;
   color: white;
   border: 0;
+}
+
+.new-button {
+  margin-top: 1.5rem;
+  padding: 0.5rem 0.7rem;
+  background-color: purple;
+  color: white;
+  border: 0;
+  float: right;
+  margin-left: 2rem;
+  font-size: large;
 }
 
 .rounded {
@@ -64,4 +76,13 @@ button {
 
 .form-item-div {
   margin-bottom: 1.5rem;
+}
+
+.entries-title-row {
+  flex-wrap: nowrap;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
