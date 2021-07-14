@@ -5,6 +5,7 @@ body {
 .head-box-text {
   margin: 0 auto;
   color: white;
+  margin-top: 0.7rem;
 }
 
 .form-div {
@@ -41,10 +42,6 @@ header {
   margin: 0;
   padding: 0;
   height: 3rem;
-}
-
-.header-div {
-  margin-top: -35px;
 }
 
 textarea {

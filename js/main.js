@@ -17,9 +17,10 @@ function submitEntry(event) {
   event.preventDefault();
 
   var formEntry = {
-    title: event.target[0].value,
-    photoUrl: event.target[1].value,
-    notes: event.target[2].value
+    title: submitForm.elements[0].value,
+    photoUrl: submitForm.elements[1].value,
+    notes: submitForm.elements[2].value,
+    entryId: data.nextEntryId
   };
 
   data.entries.unshift(formEntry);
@@ -32,9 +33,3 @@ function submitEntry(event) {
 }
 
 submitForm.addEventListener('submit', submitEntry);
-
-window.addEventListener('beforeunload', function (event) {
-  var entriesStringified = JSON.stringify(data);
-
-  localStorage.setItem('entry-form', entriesStringified);
-});

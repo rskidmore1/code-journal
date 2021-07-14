@@ -16,3 +16,8 @@ if (previousFormEntries !== null) {
 if (previousFormEntries === null) {
   localStorage.setItem('entry-form', JSON.stringify(data));
 }
+
+window.addEventListener('beforeunload', function (event) {
+  var entriesStringified = JSON.stringify(data);
+  localStorage.setItem('entry-form', entriesStringified);
+});
