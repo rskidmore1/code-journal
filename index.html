@@ -18,15 +18,21 @@
     <header>
       <div class="container">
         <div class="row header-div">
-          <div class="column-half">
+          <div class="column-half header">
             <h3 class="head-box-text">Code Journal</h3>
           </div>
+          <div class="column-half header">
+            <nav class="header-nav">
+              <a href="#entries" class="header-nav-item">Entries</a>
+            </nav>
+          </div>
+
         </div>
       </div>
     </header>
     <div class="container">
       <main>
-        <div class="form-div" data-view="entry-form">
+        <div class="form-div hidden" data-view="entry-form">
           <div class="row">
             <div class="column-full">
               <h1 class="form-h1">New Entry</h1>
@@ -58,11 +64,29 @@
               </div>
               <div class="row">
                 <div class="column-full">
-                  <button type="submit" form="codeform" class="rounded" >SAVE</button>
+                  <button type="submit" form="codeform" class="form-button rounded" >SAVE</button>
                 </div>
               </div>
           </form>
         </div>
+
+        <div class="entries-div" data-view="entries" id="entries">
+          <div class="row entries-title-row">
+            <div class="column-half entries-title">
+              <h1 class="form-h1">Entries</h1>
+            </div>
+            <div class="column-half entries-title">
+              <button class="new-button rounded">New</button>
+            </div>
+          </div>
+          <ul class="entries-list">
+
+
+
+          </ul>
+        </div>
+
+
       </main>
   </div>
   <script src="js/data.js"></script>
