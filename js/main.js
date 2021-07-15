@@ -13,10 +13,7 @@ urlInput.addEventListener('input', function (event) {
 var submitForm = document.getElementById('codeform');
 
 function submitEntry(event) {
-  // debugger;
   var insert = document.querySelector('ul');
-  // console.log('insert from submitEntry: ', insert);
-  // console.log('retreive from submitEntry: ', retrieveEntry(submitForm.elements[0].value, submitForm.elements[1].value, submitForm.elements[2].value));
 
   insert.prepend(retrieveEntry(submitForm.elements[0].value, submitForm.elements[1].value, submitForm.elements[2].value));
 
@@ -36,17 +33,14 @@ function submitEntry(event) {
 
   submitForm.reset();
 
-}
+  var formDiv = document.querySelector('.form-div');
+  formDiv.className = 'form-div hidden';
 
-// var insert = document.querySelector('ul');
-// // // console.log('Insert: ', insert);
-// insert.appendChild(retrieveEntry('submitForm.elements[0].value', 'submitForm.elements[1].value', 'submitForm.elements[2].value'));
-// This inserts li into dom on page load. Meaning my retrieveEntry() works for createing a single new entry
+}
 
 submitForm.addEventListener('submit', submitEntry);
 
 function retrieveEntry(title, photoUrl, notes) {
-  // console.log('From retrieve entry');
   var entryLi = document.createElement('li');
 
   var entryRow = document.createElement('div');
@@ -85,12 +79,12 @@ window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     insert.appendChild(retrieveEntry(data.entries[i].title, data.entries[i].photoUrl, data.entries[i].notes));
   }
+
 });
 
 var newEntryButton = document.querySelector('.new-button');
 function showNewEntryForm() {
   var formDiv = document.querySelector('.form-div');
   formDiv.className = 'form-div ';
-  // console.log('click worked');
 }
 newEntryButton.addEventListener('click', showNewEntryForm);
