@@ -13,6 +13,12 @@ urlInput.addEventListener('input', function (event) {
 var submitForm = document.getElementById('codeform');
 
 function submitEntry(event) {
+  // debugger;
+  var insert = document.querySelector('ul');
+  // console.log('insert from submitEntry: ', insert);
+  // console.log('retreive from submitEntry: ', retrieveEntry(submitForm.elements[0].value, submitForm.elements[1].value, submitForm.elements[2].value));
+
+  insert.prepend(retrieveEntry(submitForm.elements[0].value, submitForm.elements[1].value, submitForm.elements[2].value));
 
   event.preventDefault();
 
@@ -32,9 +38,15 @@ function submitEntry(event) {
 
 }
 
+// var insert = document.querySelector('ul');
+// // // console.log('Insert: ', insert);
+// insert.appendChild(retrieveEntry('submitForm.elements[0].value', 'submitForm.elements[1].value', 'submitForm.elements[2].value'));
+// This inserts li into dom on page load. Meaning my retrieveEntry() works for createing a single new entry
+
 submitForm.addEventListener('submit', submitEntry);
 
-function retrieveEntry(entry) {
+function retrieveEntry(title, photoUrl, notes) {
+  // console.log('From retrieve entry');
   var entryLi = document.createElement('li');
 
   var entryRow = document.createElement('div');
@@ -43,8 +55,7 @@ function retrieveEntry(entry) {
   entryColHalfImg.className = 'column-half';
   var entryImg = document.createElement('img');
   entryImg.className = 'placeholder-img rounded form-item-div';
-  // replace src when time is right
-  entryImg.setAttribute('src', entry.photoUrl);
+  entryImg.setAttribute('src', photoUrl);
   entryImg.setAttribute('alt', 'placeholder');
 
   var entryColHalfText = document.createElement('div');
@@ -52,9 +63,9 @@ function retrieveEntry(entry) {
   var entryMargin = document.createElement('div');
   entryMargin.className = 'form-item-div input-bottom-margin';
   var entryH2 = document.createElement('h2');
-  entryH2.textContent = entry.title;
+  entryH2.textContent = title;
   var entryText1 = document.createElement('p');
-  entryText1.textContent = entry.notes;
+  entryText1.textContent = notes;
 
   entryLi.appendChild(entryRow);
   entryRow.appendChild(entryColHalfImg);
@@ -72,6 +83,14 @@ window.addEventListener('DOMContentLoaded', function (event) {
   var insert = document.querySelector('ul');
 
   for (var i = 0; i < data.entries.length; i++) {
-    insert.appendChild(retrieveEntry(data.entries[i]));
+    insert.appendChild(retrieveEntry(data.entries[i].title, data.entries[i].photoUrl, data.entries[i].notes));
   }
 });
+
+var newEntryButton = document.querySelector('.new-button');
+function showNewEntryForm() {
+  var formDiv = document.querySelector('.form-div');
+  formDiv.className = 'form-div ';
+  // console.log('click worked');
+}
+newEntryButton.addEventListener('click', showNewEntryForm);
