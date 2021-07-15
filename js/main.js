@@ -28,6 +28,7 @@ function submitEntry(event) {
 
   data.entries.unshift(formEntry);
   data.nextEntryId += 1;
+  data.view = 'entries';
 
   imgSrc.setAttribute('src', 'images/placeholder-image-square.jpg');
 
@@ -89,6 +90,7 @@ var newEntryButton = document.querySelector('.new-button');
 function showNewEntryForm() {
   var formDiv = document.querySelector('.form-div');
   formDiv.className = 'form-div ';
+  data.view = formDiv.getAttribute('data-view');
 
   var entriesDiv = document.querySelector('.entries-div');
   entriesDiv.className = 'entries-div hidden';
