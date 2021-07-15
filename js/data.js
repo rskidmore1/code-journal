@@ -17,18 +17,44 @@ if (previousFormEntries === null) {
   localStorage.setItem('entry-form', JSON.stringify(data));
 }
 
+var previousView = localStorage.getItem('active-view');
+
+if (previousView === null) {
+  localStorage.setItem('active-view', 'entries-div');
+}
+
 function keepViewOnUnload() {
   var formDiv = document.querySelector('.form-div');
-  var viewBeforeUnload = formDiv.className;
+  var entriesDiv = document.querySelector('.entries-div');
+  var viewBeforeUnload;
+  if (formDiv.className.includes('hidden')) {
+    viewBeforeUnload = 'entries-div';
+  } else if (entriesDiv.className.includes('hidden')) {
+    viewBeforeUnload = 'form-div';
+  }
+
   localStorage.setItem('active-view', viewBeforeUnload);
+
   return viewBeforeUnload;
 }
 
 function retreiveViewOnLoad() {
-  var formDiv = document.querySelector('.form-div');
+
   var viewAfterLoad = localStorage.getItem('active-view');
-  formDiv.className = viewAfterLoad;
-  return formDiv;
+  var activeView;
+  var inactiveView1;
+  if (viewAfterLoad === 'entries-div') {
+    activeView = document.querySelector('.entries-div');
+    activeView.className = 'entries-div';
+    inactiveView1 = document.querySelector('.form-div');
+    inactiveView1.className = 'form-div hidden';
+  } else if (viewAfterLoad === 'form-div') {
+    activeView = document.querySelector('.form-div');
+    activeView.className = 'form-div';
+    inactiveView1 = document.querySelector('.entries-div');
+    inactiveView1.className = 'entries-div hidden';
+  }
+
 }
 
 window.addEventListener('beforeunload', function (event) {

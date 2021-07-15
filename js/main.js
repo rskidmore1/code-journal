@@ -32,9 +32,11 @@ function submitEntry(event) {
   imgSrc.setAttribute('src', 'images/placeholder-image-square.jpg');
 
   submitForm.reset();
-
   var formDiv = document.querySelector('.form-div');
   formDiv.className = 'form-div hidden';
+
+  var entriesDiv = document.querySelector('.entries-div');
+  entriesDiv.className = 'entries-div ';
 
 }
 
@@ -83,8 +85,12 @@ window.addEventListener('DOMContentLoaded', function (event) {
 });
 
 var newEntryButton = document.querySelector('.new-button');
+
 function showNewEntryForm() {
   var formDiv = document.querySelector('.form-div');
   formDiv.className = 'form-div ';
+
+  var entriesDiv = document.querySelector('.entries-div');
+  entriesDiv.className = 'entries-div hidden';
 }
 newEntryButton.addEventListener('click', showNewEntryForm);
