@@ -36,4 +36,43 @@ window.addEventListener('DOMContentLoaded', function (event) {
 
   switchView(data.view);
 
+  if (data.editing !== null) {
+    setEditInput(data.editing);
+  }
+
+});
+
+function setEditInput(edit) {
+
+  document.querySelector('#photo-url').setAttribute('value', edit.photoUrl);
+
+  document.querySelector('#title').setAttribute('value', edit.title);
+  document.querySelector('#title').setAttribute('entry-id', edit.entryId);
+  document.querySelector('#notes').textContent = edit.notes;
+}
+
+var ulItem = document.querySelector('.entries-list');
+ulItem.addEventListener('click', function (event) {
+  if (event.target.tagName === 'I') {
+    // // console.log('event worked', event.target);
+    var closestItem = event.target.closest('li');
+
+    data.view = 'entry-form';
+    switchView(data.view);
+    var dataViewId = closestItem.getAttribute('data-entry-id');
+    // console.log(closestItem);
+    // console.log('dataViewId: ', dataViewId);
+    for (var i = 0; i < data.entries.length; i++) {
+      // // console.log(data.entries[i]);
+      if (data.entries[i].entryId === Number(dataViewId)) {
+        // console.log('if loop worked: ', data.entries[i]);
+        data.editing = data.entries[i];
+        setEditInput(data.editing);
+      }
+    }
+
+    // data.editing = 'hello'; data.editing =
+
+  }
+
 });
