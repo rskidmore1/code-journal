@@ -22,8 +22,10 @@ function submitEntry(event) {
   var entryId = document.querySelector('#title').getAttribute('entry-id');
 
   if (entryId !== '') {
-    for (var i = 0; i < data.entries; i++) {
-      if (entryId === data.entries[i].entryId) {
+
+    for (var i = 0; i < data.entries.length; i++) {
+      if (Number(entryId) === data.entries[i].entryId) {
+
         data.entries[i].title = submitForm.elements[0].value;
         data.entries[i].photoUrl = submitForm.elements[1].value;
         data.entries[i].notes = submitForm.elements[2].value;

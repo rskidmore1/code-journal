@@ -70,9 +70,6 @@ ulItem.addEventListener('click', function (event) {
         setEditInput(data.editing);
       }
     }
-
-    // data.editing = 'hello'; data.editing =
-
   }
 
 });
