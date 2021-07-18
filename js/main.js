@@ -15,7 +15,26 @@ var submitForm = document.getElementById('codeform');
 function submitEntry(event) {
   var insert = document.querySelector('ul');
 
-  insert.prepend(retrieveEntry(submitForm.elements[0].value, submitForm.elements[1].value, submitForm.elements[2].value));
+  if (Number(submitForm.elements[0].getAttribute('entry-id')) > 0) {
+    var existingLIs = insert.querySelectorAll('li');
+    for (var i = 0; i < existingLIs.length; i++) {
+      if (existingLIs[i].getAttribute('data-entry-id') === submitForm.elements[0].getAttribute('entry-id')) {
+        existingLIs[i].querySelector('img').setAttribute('src', submitForm.elements[1].value);
+        existingLIs[i].querySelector('h2').textContent = submitForm.elements[0].value;
+        existingLIs[i].querySelector('p').textContent = submitForm.elements[2].value;
+        data.editing = null;
+
+        submitForm.elements[0].setAttribute('entry-id', '');
+        submitForm.elements[0].setAttribute('value', '');
+        submitForm.elements[1].setAttribute('value', '');
+        submitForm.elements[2].textContent = '';
+
+      }
+    }
+  } else {
+    insert.prepend(retrieveEntry(submitForm.elements[0].value, submitForm.elements[1].value, submitForm.elements[2].value));
+
+  }
 
   event.preventDefault();
 
@@ -23,12 +42,12 @@ function submitEntry(event) {
 
   if (entryId !== '') {
 
-    for (var i = 0; i < data.entries.length; i++) {
+    for (var j = 0; j < data.entries.length; j++) {
       if (Number(entryId) === data.entries[i].entryId) {
 
-        data.entries[i].title = submitForm.elements[0].value;
-        data.entries[i].photoUrl = submitForm.elements[1].value;
-        data.entries[i].notes = submitForm.elements[2].value;
+        data.entries[j].title = submitForm.elements[0].value;
+        data.entries[j].photoUrl = submitForm.elements[1].value;
+        data.entries[j].notes = submitForm.elements[2].value;
 
       }
     }
