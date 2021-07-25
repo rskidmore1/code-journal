@@ -104,3 +104,12 @@ ul {
 .header {
   width: 20%;
 }
+
+.edit-item {
+  padding: 0;
+}
+
+.edit-pen {
+  padding-top: 1.5rem;
+  color: purple;
+}
