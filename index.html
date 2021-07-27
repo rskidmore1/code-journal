@@ -14,9 +14,9 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <header>
-      <div class="container">
+<body >
+  <header>
+      <div class="container ">
         <div class="row header-div">
           <div class="column-half header">
             <h3 class="head-box-text">Code Journal</h3>
@@ -30,8 +30,27 @@
       </div>
     </header>
     <div class="container">
-      <main>
+      <main >
+        <div class="overlay hidden">
+          <div class="modal rounded">
+            <div class="row">
+              <p class="column-full modal-text">Are you sure you want to delete this entry?</p>
+            </div>
+            <div class="row">
+
+              <div class="column-half width-50">
+                 <button class="cancel-button delete-button button-text gray-bg rounded">Cancel</button>
+              </div>
+
+              <div class="column-half width-50">
+                 <button class="confirm-button delete-button button-text red-bg rounded float-right white-text">Confirm</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
         <div class="form-div hidden" data-view="entry-form">
+
           <div class="row">
             <div class="column-full">
               <h1 class="form-h1">New Entry</h1>
@@ -62,9 +81,13 @@
                 </div>
               </div>
               <div class="row">
-                <div class="column-full">
+                <div class="column-half width-50">
+                  <p class="delete-text">Delete Entry</p>
+                </div>
+                <div class="column-half width-50">
                   <button type="submit" form="codeform" class="form-button rounded" >SAVE</button>
                 </div>
+
               </div>
           </form>
         </div>
@@ -100,6 +123,7 @@
         </div>
       </main>
   </div>
+
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>

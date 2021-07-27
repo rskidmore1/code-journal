@@ -199,3 +199,19 @@ ulItem.addEventListener('click', function (event) {
   }
 
 });
+
+function showModal(event) {
+  var overlay = document.querySelector('.overlay');
+  overlay.className = 'overlay';
+}
+
+var deleteText = document.querySelector('.delete-text');
+deleteText.addEventListener('click', showModal);
+
+function cancelModal(event) {
+  var overlay = document.querySelector('.overlay');
+  overlay.className = 'overlay hidden';
+}
+
+var cancelBtn = document.querySelector('.cancel-button');
+cancelBtn.addEventListener('click', cancelModal);

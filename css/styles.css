@@ -3,6 +3,57 @@ body {
   font-family: sans-serif;
 }
 
+.overlay {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(22, 22, 22, 0.596);
+}
+
+.modal {
+  width: 375px;
+  height: 125px;
+  background-color: white;
+  position: relative;
+  top: 30%;
+  left: 30%;
+  padding: 0.5rem;
+}
+
+.modal-text {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.red-bg {
+  background-color: red;
+}
+
+.gray-bg {
+  background-color: gray;
+}
+
+.delete-button {
+  height: 2rem;
+  width: 5rem;
+}
+
+.float-right {
+  float: right;
+}
+
+.white-text {
+  color: white;
+}
+
+.button-text {
+  font-size: large;
+  margin: 0;
+}
+
 .head-box-text {
   margin: 0 auto;
   color: white;
@@ -112,4 +163,14 @@ ul {
 .edit-pen {
   padding-top: 1.5rem;
   color: purple;
+}
+
+.delete-text {
+  margin: 0;
+  text-decoration: underline;
+  color: red;
+}
+
+.width-50 {
+  width: 50%;
 }
