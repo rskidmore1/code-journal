@@ -239,9 +239,11 @@ confirmBtn.addEventListener('click', function () {
   switchView(data.view);
   cancelModal('la');
   // debugger;
-  submitForm.reset();
-  var resetEntryId = document.querySelector('#title');
-  resetEntryId.setAttribute('entry-id', '');
+
+  document.querySelector('#photo-url').setAttribute('value', '');
+  document.querySelector('#title').setAttribute('value', '');
+  document.querySelector('#title').setAttribute('entry-id', '');
+  document.querySelector('#notes').textContent = '';
   for (var i = 0; i < data.entries.length; i++) {
     // console.log(data.entries[i].entryId);
     // var someVal = data.entries[i].entryId;
