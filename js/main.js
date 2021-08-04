@@ -83,7 +83,6 @@ function submitEntry(event) {
 submitForm.addEventListener('submit', submitEntry);
 
 function retrieveEntry(title, photoUrl, notes, entryId) {
-  // // console.log('entryId:', entryId);
   var entryLi = document.createElement('li');
   entryLi.setAttribute('data-entry-id', entryId);
 
@@ -187,7 +186,6 @@ function setEditInput(edit) {
 var ulItem = document.querySelector('.entries-list');
 ulItem.addEventListener('click', function (event) {
   if (event.target.tagName === 'I') {
-    // // // console.log('event worked', event.target);
     var closestItem = event.target.closest('li');
 
     data.view = 'entry-form';
@@ -195,12 +193,8 @@ ulItem.addEventListener('click', function (event) {
     var showDelText = document.querySelector('.delete-text');
     showDelText.classList.remove('hidden');
     var dataViewId = closestItem.getAttribute('data-entry-id');
-    // // console.log(closestItem);
-    // // console.log('dataViewId: ', dataViewId);
     for (var i = 0; i < data.entries.length; i++) {
-      // // // console.log(data.entries[i]);
       if (data.entries[i].entryId === Number(dataViewId)) {
-        // console.log('if loop worked: ', data.entries[i]);
         data.editing = data.entries[i];
         setEditInput(data.editing);
       }
@@ -230,34 +224,26 @@ confirmBtn.addEventListener('click', function () {
   var hideDelText = document.querySelector('.delete-text');
   hideDelText.classList.add('hidden');
   var entryId = document.querySelector('#title').getAttribute('entry-id');
-  // console.log(entryId);
   var idQuery = "[data-entry-id='" + entryId + "']";
   var removeLi = document.querySelector(idQuery);
-  // console.log(removeLi);
+
   removeLi.remove();
   data.view = 'entries';
   switchView(data.view);
   cancelModal('la');
-  // debugger;
 
   document.querySelector('#photo-url').setAttribute('value', '');
   document.querySelector('#title').setAttribute('value', '');
   document.querySelector('#title').setAttribute('entry-id', '');
   document.querySelector('#notes').textContent = '';
   for (var i = 0; i < data.entries.length; i++) {
-    // console.log(data.entries[i].entryId);
-    // var someVal = data.entries[i].entryId;
 
     if (data.entries[i].entryId === Number(entryId)) {
       data.editing = null;
-      // // console.log('if loop worked: ', data.entries[i]);
-      // data.editing = data.entries[i];
+
       data.entries.splice(i, 1);
-      // setEditInput(data.editing);
       break;
     }
   }
-  // // console.log(data.entries);
 
-  // var
 });
