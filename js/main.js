@@ -164,6 +164,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
 
   if (data.editing !== null) {
     setEditInput(data.editing);
+    var showDelText = document.querySelector('.delete-text');
+    showDelText.classList.remove('hidden');
   }
 
 });
